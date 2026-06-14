@@ -53,6 +53,19 @@ Standard causal discovery assumes a fixed direction (`X → Y` or `Y → X`). Ho
 ## Repository Structure
 
 
+causal-inflection-benchmark/
+├── data/
+│   ├── soil_heat_flux_data.csv
+│   └── traffic_dynamics_data.csv
+├── plots/
+│   ├── soil_heat_flux_plot.png
+│   └── traffic_dynamics_plot.png
+├── docs/
+│   └── Causal Challenge Report.pdf
+├── README.md          
+├── LICENSE            
+└── .gitignore        
+
 ## Quick Start
 
 ### Prerequisites
