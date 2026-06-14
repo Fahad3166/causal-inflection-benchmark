@@ -1,5 +1,10 @@
 Two datasets with 500+ observations each where the causal direction between variables flips based on threshold values. Features surface energy balance (soil heat flux vs. net radiation) and traffic dynamics (speed vs. density) with ground truth from Brutsaert (1982) and Kerner (2004).
 
+
+# A complete  Causal Challenge Report.pdf  is attached in docs folder. 
+
+
+
 # Causal Inflection Benchmark: Value-Dependent Causal Reversal
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
