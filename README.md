@@ -1,59 +1,78 @@
-Two datasets with 500+ observations each where the causal direction between variables flips based on threshold values. Features surface energy balance (soil heat flux vs. net radiation) and traffic dynamics (speed vs. density) with ground truth from Brutsaert (1982) and Kerner (2004).
+4 datasets with 300+ observations each where the causal direction between variables flips based on threshold values. Features surface energy balance (soil heat flux vs. net radiation) and traffic dynamics (speed vs. density) with ground truth from Brutsaert (1982) and Kerner (2004).
 
 
  A complete  Causal Challenge Report.pdf  is attached in docs folder. 
-
 
 
 # Causal Inflection Benchmark: Value-Dependent Causal Reversal
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Data: AmeriFlux](https://img.shields.io/badge/Data-AmeriFlux-green.svg)](https://ameriflux.lbl.gov/)
-[![Data: PeMS](https://img.shields.io/badge/Data-PeMS-orange.svg)](https://pems.dot.ca.gov/)
+[![Dataset: CauseEffectPairs](https://img.shields.io/badge/Dataset-CauseEffectPairs-green.svg)](https://webdav.tuebingen.mpg.de/cause-effect/)
 
 ## Overview
 
-This repository contains two benchmark datasets for **value-dependent causal reversal** — a phenomenon where the causal direction between two variables flips based on the value of one variable. Each dataset includes 500+ observations with known ground truth from peer-reviewed literature.
+This repository contains four benchmark datasets for **value-dependent causal reversal**  a phenomenon where the causal relationship between two variables changes strength or structure based on threshold values. Each dataset includes 300+ real-world observations with known ground truth from peer-reviewed literature (Mooij et al., 2016, JMLR).
 
 ### The Causal Reversal Problem
 
-Standard causal discovery assumes a fixed direction (`X → Y` or `Y → X`). However, many real-world systems exhibit **regime-dependent causality**:
-
-| Dataset | Low/Free Regime | High/Congested Regime | Switching Point |
-|:--------|:----------------|:----------------------|:----------------|
-| **Soil Heat Flux** | `X → Y` (Daytime) | `Y → X` (Nighttime) | X = 10 to -40 W/m² |
-| **Traffic Dynamics** | `X → Y` (Free flow) | `Y → X` (Congested) | Y = 25 veh/km |
+Standard causal discovery assumes a fixed direction (X → Y or Y → X). However, many real-world systems exhibit **regime-dependent causality** where the strength and reliability of causal relationships change across thresholds.
 
 ## Datasets
 
-### Dataset 1: Surface Energy Balance
+### Dataset 1: Elevation vs. Temperature (Pair 0001)
 
 | Property | Value |
 |:---------|:------|
-| **X (Cause)** | Net Radiative Flux (W/m²) |
-| **Y (Effect)** | Soil Heat Flux (W/m²) |
+| **X** | Altitude / Elevation (meters above sea level) |
+| **Y** | Mean Annual Temperature (°C) |
+| **Sample Size** | 349 weather stations |
+| **Ground Truth** | Altitude → Temperature (Mooij et al., 2016) |
+| **Source** | Deutscher Wetterdienst (DWD) via MPI |
+
+**Causal Regimes:**
+| Regime | Condition | Characterization |
+|:-------|:----------|:-----------------|
+| Low-to-Mid Elevations | X ≤ 800m | Strong X → Y (adiabatic lapse rate) |
+| High Elevations | X > 800m | Weak / Confounded X → Y (alpine complexity) |
+
+### Dataset 2: Abalone Weight vs. Age (Pair 0006)
+
+| Property | Value |
+|:---------|:------|
+| **X** | Shell Weight (dry grams) |
+| **Y** | Biological Age (years, from shell rings) |
+| **Sample Size** | 4,177 marine specimens |
+| **Ground Truth** | Age → Shell Weight (Mooij et al., 2016) |
+| **Source** | Tasmanian marine biology survey |
+
+**Causal Regimes:**
+| Regime | Condition | Characterization |
+|:-------|:----------|:-----------------|
+| Juvenile Growth | X ≤ 0.15g | Strong Age → Weight (linear growth) |
+| Mature Phase | X > 0.15g | Diminishing relationship (growth plateau) |
+
+### Dataset 3: Net Radiative Flux vs. Soil Heat Flux (AmeriFlux)
+
+| Property | Value |
+|:---------|:------|
+| **X** | Net Radiative Flux (W/m²) |
+| **Y** | Soil Heat Flux (W/m²) |
 | **Sample Size** | 500 observations |
-| **Ground Truth** | Brutsaert (1982) |
+| **Ground Truth** | Day: X → Y, Night: Y → X (Brutsaert, 1982) |
 | **Source** | AmeriFlux Network |
 
-**Causal Regimes:**
-- **Daytime (X > 10 W/m²):** `X → Y` — Solar radiation drives downward heat flux
-- **Nighttime (X ≤ -40 W/m²):** `Y → X` — Subsurface heat conducts upward to cooling surface
-
-### Dataset 2: Traffic Dynamics
+### Dataset 4: Traffic Speed vs. Density (Caltrans PeMS)
 
 | Property | Value |
 |:---------|:------|
-| **X (Cause)** | Average Vehicle Speed (km/h) |
-| **Y (Effect)** | Traffic Density (veh/km) |
+| **X** | Vehicle Speed (km/h) |
+| **Y** | Traffic Density (veh/km) |
 | **Sample Size** | 500 observations |
-| **Ground Truth** | Kerner (2004) |
+| **Ground Truth** | Free flow: X → Y, Congested: Y → X (Kerner, 2004) |
 | **Source** | Caltrans PeMS |
 
-**Causal Regimes:**
-- **Free Flow (Y ≤ 25 veh/km):** `X → Y` — Driver speed choices determine density
-- **Congested (Y > 25 veh/km):** `Y → X` — Physical density constraints force speed reduction
+## Repository Structure
 
 ## Repository Structure
 
