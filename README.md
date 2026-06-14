@@ -99,7 +99,7 @@ conda create -n c_challenge python=3.8
 conda activate c_challenge
 conda install numpy pandas matplotlib scipy
 
-#Ground Truth Citations
+## Ground Truth Citations
 
 Dataset 1
 Brutsaert, W. (1982). Evaporation into the Atmosphere: Theory, History, and Applications. Springer.
@@ -110,7 +110,7 @@ Dataset 2
 Kerner, B. S. (2004). The Physics of Traffic: Empirical Phenomena of Chaotic Mobile Systems. Springer.
 DOI: 10.1007/978-3-540-40986-1
 
-#Data Sources
+## Data Sources
 
 
 Dataset	Source	Link
@@ -119,16 +119,19 @@ Soil Heat Flux	AmeriFlux Network	ameriflux.lbl.gov
 Traffic Dynamics	Caltrans PeMS	pems.dot.ca.gov
 
 
-Key Findings
+## Key Findings
 
 
-Causal direction is not always fixed — It can depend on the value of a conditioning variable
+Causal relationships are regime-dependent  The strength of Altitude → Temperature weakens significantly above 800m elevation
 
-Physical thresholds matter — At X > 10 W/m², net radiation drives soil heat; at X ≤ -40 W/m², the relationship reverses
+Biological growth has thresholds  Abalone weight-age relationship plateaus after 0.15g (maturity)
 
-Infrastructure exhibits regime switching — Traffic shows opposite causal structures below and above 25 veh/km
+Physical thresholds matter  Day/night flips soil heat flux direction; free-flow/congested flips traffic causality
 
-Applications
+Real-world data confirms theory  All datasets are observational, not synthetic
+
+
+## Applications
 
 This benchmark can be used for:
 
@@ -140,10 +143,8 @@ Developing conditional causal inference models
 
 Educational demonstrations of non-stationary causality
 
-License
-MIT License — feel free to use, modify, and distribute with attribution.
 
-Author
+## Author
 
 
 FAHAD ALI
@@ -151,7 +152,7 @@ FAHAD ALI
 
 Project submitted as part of Causal Inference for Temporal and Non-Temporal Data, University of Vienna, Summer 2026.
 
-Citation
+## Citation
 
 
 If you use this dataset in your research, please cite:
@@ -165,7 +166,7 @@ bibtex
   url = {https://github.com/Fahad3166/causal-inflection-benchmark}
 }
 
-License
+## License
 MIT License — feel free to use, modify, and distribute with attribution.
 
 ⚠️ Important: While the code is under MIT license, the data remains the property of the original creators (AmeriFlux Network and Caltrans PeMS). Please cite them appropriately when using the data.
@@ -190,7 +191,7 @@ MIT License — feel free to use, modify, and distribute with attribution.
 
 
 
-Acknowledgments
+## Acknowledgments
 
 
 Prof. Kateřina Schindlerová, University of Vienna
