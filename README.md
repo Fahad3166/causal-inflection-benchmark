@@ -1,7 +1,7 @@
 Two datasets with 500+ observations each where the causal direction between variables flips based on threshold values. Features surface energy balance (soil heat flux vs. net radiation) and traffic dynamics (speed vs. density) with ground truth from Brutsaert (1982) and Kerner (2004).
 
 
-# A complete  Causal Challenge Report.pdf  is attached in docs folder. 
+ A complete  Causal Challenge Report.pdf  is attached in docs folder. 
 
 
 
