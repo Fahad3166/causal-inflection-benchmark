@@ -75,24 +75,32 @@ causal-inflection-benchmark/
 
 ### Prerequisites
 
-Create Conda -n c_challenge envoirment 
-
-
+Create conda environment:
+```bash
+conda create -n c_challenge python=3.8
+conda activate c_challenge
 conda install numpy pandas matplotlib scipy
 
-Ground Truth Citations
+#Ground Truth Citations
+
 Dataset 1
 Brutsaert, W. (1982). Evaporation into the Atmosphere: Theory, History, and Applications. Springer.
 DOI: 10.1007/978-94-017-1497-6
+
 
 Dataset 2
 Kerner, B. S. (2004). The Physics of Traffic: Empirical Phenomena of Chaotic Mobile Systems. Springer.
 DOI: 10.1007/978-3-540-40986-1
 
-Data Sources
+#Data Sources
+
+
 Dataset	Source	Link
+
 Soil Heat Flux	AmeriFlux Network	ameriflux.lbl.gov
 Traffic Dynamics	Caltrans PeMS	pems.dot.ca.gov
+
+
 Key Findings
 Causal direction is not always fixed — It can depend on the value of a conditioning variable
 
@@ -101,6 +109,7 @@ Physical thresholds matter — At X > 10 W/m², net radiation drives soil heat; 
 Infrastructure exhibits regime switching — Traffic shows opposite causal structures below and above 25 veh/km
 
 Applications
+
 This benchmark can be used for:
 
 Testing causal discovery algorithms on regime-switching data
