@@ -95,7 +95,6 @@ causal-inflection-benchmark/
 ### Prerequisites
 
 Create conda environment:
-```bash
 conda create -n c_challenge python=3.8
 conda activate c_challenge
 conda install numpy pandas matplotlib scipy
@@ -121,6 +120,8 @@ Traffic Dynamics	Caltrans PeMS	pems.dot.ca.gov
 
 
 Key Findings
+
+
 Causal direction is not always fixed — It can depend on the value of a conditioning variable
 
 Physical thresholds matter — At X > 10 W/m², net radiation drives soil heat; at X ≤ -40 W/m², the relationship reverses
